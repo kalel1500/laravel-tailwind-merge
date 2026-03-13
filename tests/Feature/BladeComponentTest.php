@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Blade;
-use Tests\Fixtures\Button;
-use Tests\Fixtures\Circle;
+use Thehouseofel\TailwindMerge\Tests\Fixtures\Button;
+use Thehouseofel\TailwindMerge\Tests\Fixtures\Circle;
 
 describe('twMerge', function () {
     it('provides a blade directive to merge tailwind classes', function () {

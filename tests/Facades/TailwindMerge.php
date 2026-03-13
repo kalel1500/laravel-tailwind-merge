@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 use Illuminate\Config\Repository;
-use TailwindMerge\Laravel\Facades\TailwindMerge;
-use TailwindMerge\Laravel\TailwindMergeServiceProvider;
+use Thehouseofel\TailwindMerge\Facades\TailwindMerge;
+use Thehouseofel\TailwindMerge\TailwindMergeServiceProvider;
 
 it('resolves resources', function () {
     $app = app();

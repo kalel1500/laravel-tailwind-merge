@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Illuminate\Config\Repository;
 use TailwindMerge\Contracts\TailwindMergeContract;
-use TailwindMerge\Laravel\TailwindMergeServiceProvider;
+use Thehouseofel\TailwindMerge\TailwindMergeServiceProvider;
 use TailwindMerge\TailwindMerge;
 
 it('binds the tailwind merge on the container', function () {

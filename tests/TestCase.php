@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests;
+namespace Thehouseofel\TailwindMerge\Tests;
 
 use Illuminate\Foundation\Testing\Concerns\InteractsWithViews;
-use TailwindMerge\Laravel\TailwindMergeServiceProvider;
+use Thehouseofel\TailwindMerge\TailwindMergeServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {

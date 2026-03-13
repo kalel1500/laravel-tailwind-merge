@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TailwindMerge\Laravel;
+namespace Thehouseofel\TailwindMerge;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TailwindMerge\Laravel\Facades;
+namespace Thehouseofel\TailwindMerge\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

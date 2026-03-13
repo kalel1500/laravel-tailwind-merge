@@ -43,7 +43,7 @@ composer require gehrisandro/tailwind-merge-laravel
 Optionally, publish the configuration file:
 
 ```bash
-php artisan vendor:publish --provider="TailwindMerge\Laravel\TailwindMergeServiceProvider"
+php artisan vendor:publish --provider="Thehouseofel\TailwindMerge\TailwindMergeServiceProvider"
 ```
 
 This will create a `config/tailwind-merge.php` configuration file in your project, which you can modify to your needs
@@ -69,7 +69,7 @@ Finally, you may use `TailwindMerge` in various places like your Blade component
 `TailwindMerge` is not only capable of resolving conflicts between basic Tailwind CSS classes, but also handles more complex scenarios:
 
 ```php
-use TailwindMerge\Laravel\Facades\TailwindMerge;
+use Thehouseofel\TailwindMerge\Facades\TailwindMerge;
 
 // conflicting classes
 TailwindMerge::merge('block inline'); // inline
@@ -203,7 +203,7 @@ If you don't use Laravel Blade, you can still use `TailwindMerge` by using the F
 
 #### Facade
 ```php
-use TailwindMerge\Laravel\Facades\TailwindMerge;
+use Thehouseofel\TailwindMerge\Facades\TailwindMerge;
 
 TailwindMerge::merge('w-10 h-10 rounded-full bg-red-500 bg-blue-500'); // w-10 h-10 rounded-full bg-blue-500
 ```

@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "TailwindMerge\\Laravel\\": "src/"
+            "Thehouseofel\\TailwindMerge\\": "src/"
         },
         "files": [
             "src/helpers.php"
@@ -30,7 +30,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Thehouseofel\\TailwindMerge\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "dev",

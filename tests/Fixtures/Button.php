@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace tests\Fixtures;
+namespace Thehouseofel\TailwindMerge\Tests\Fixtures;
 
 use Illuminate\View\Component;
 
