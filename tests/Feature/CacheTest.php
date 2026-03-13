@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Event;
-use TailwindMerge\TailwindMerge;
+use TalesFromADev\TailwindMerge\TailwindMerge;
 
 it('uses caching', function () {
     Event::fake();

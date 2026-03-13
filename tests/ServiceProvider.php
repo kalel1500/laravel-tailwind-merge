@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 use Illuminate\Config\Repository;
-use TailwindMerge\Contracts\TailwindMergeContract;
+use TalesFromADev\TailwindMerge\TailwindMergeInterface;
 use Thehouseofel\TailwindMerge\TailwindMergeServiceProvider;
-use TailwindMerge\TailwindMerge;
+use TalesFromADev\TailwindMerge\TailwindMerge;
 
 it('binds the tailwind merge on the container', function () {
     $app = app();
@@ -78,7 +78,7 @@ it('provides', function () {
 
     expect($provides)->toBe([
         TailwindMerge::class,
-        TailwindMergeContract::class,
+        TailwindMergeInterface::class,
         'tailwind-merge',
     ]);
 });
