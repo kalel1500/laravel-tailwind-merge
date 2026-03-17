@@ -49,7 +49,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "TailwindMerge\\Laravel\\TailwindMergeServiceProvider"
+                "Thehouseofel\\TailwindMerge\\TailwindMergeServiceProvider"
             ]
         }
     },
