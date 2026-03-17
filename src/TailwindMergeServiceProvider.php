@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Thehouseofel\TailwindMerge;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
-use Illuminate\View\Compilers\BladeCompiler;
 use Illuminate\View\ComponentAttributeBag;
 use TalesFromADev\TailwindMerge\TailwindMergeInterface;
 use TalesFromADev\TailwindMerge\TailwindMerge;
@@ -39,15 +39,7 @@ class TailwindMergeServiceProvider extends BaseServiceProvider
 
     protected function registerBladeDirectives(): void
     {
-        $this->app->afterResolving('blade.compiler', function (BladeCompiler $bladeCompiler): void {
-            $name = config('tailwind-merge.blade_directive', 'twMerge');
-
-            if ($name === null) {
-                return;
-            }
-
-            $bladeCompiler->directive($name, fn (?string $expression): string => "<?php echo twMerge($expression); ?>");
-        });
+        Blade::directive('twMerge', fn (?string $expression): string => "<?php echo twMerge($expression); ?>");
     }
 
     protected function registerAttributesBagMacros(): void

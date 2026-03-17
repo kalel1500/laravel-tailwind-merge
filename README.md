@@ -180,24 +180,6 @@ The package registers a Blade directive which can be used to merge classes in yo
 @twMerge('w-10 h-10 rounded-full bg-red-500', 'bg-blue-500') // w-10 h-10 rounded-full bg-blue-500
 ```
 
-If you want to rename the blade directive, you can do so in the `config/tailwind-merge.php` configuration file:
-
-```php
-// config/tailwind-merge.php
-return [
-    'blade_directive' => 'customTwMerge',
-];
-```
-
-You could even disable the directive completely by setting it to `null`:
-
-```php
-// config/tailwind-merge.php
-return [
-    'blade_directive' => null,
-];
-```
-
 ### Everywhere else in Laravel
 If you don't use Laravel Blade, you can still use `TailwindMerge` by using the Facade or the helper method directly:
 
