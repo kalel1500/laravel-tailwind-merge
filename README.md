@@ -1,10 +1,13 @@
+> [!NOTE]
+> This project is a fork from [tailwind-merge](https://github.com/gehrisandro/tailwind-merge-laravel) by [Sandro Gehri](https://github.com/gehrisandro).
+
 <p align="center">
-    <img src="https://raw.githubusercontent.com/gehrisandro/tailwind-merge-laravel/main/art/example.png" width="600" alt="TailwindMerge for Laravel">
+    <img src="https://raw.githubusercontent.com/kalel1500/laravel-tailwind-merge/master/art/example.png" width="600" alt="TailwindMerge for Laravel">
     <p align="center">
-        <a href="https://github.com/gehrisandro/tailwind-merge-laravel/actions"><img alt="GitHub Workflow Status (main)" src="https://img.shields.io/github/actions/workflow/status/gehrisandro/tailwind-merge-laravel/tests.yml?branch=main&label=tests&style=round-square"></a>
-        <a href="https://packagist.org/packages/gehrisandro/tailwind-merge-laravel"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/gehrisandro/tailwind-merge-laravel"></a>
-        <a href="https://packagist.org/packages/gehrisandro/tailwind-merge-laravel"><img alt="Latest Version" src="https://img.shields.io/packagist/v/gehrisandro/tailwind-merge-laravel"></a>
-        <a href="https://packagist.org/packages/gehrisandro/tailwind-merge-laravel"><img alt="License" src="https://img.shields.io/github/license/gehrisandro/tailwind-merge-laravel"></a>
+        <a href="https://github.com/kalel1500/laravel-tailwind-merge/actions"><img alt="GitHub Workflow Status (main)" src="https://img.shields.io/github/actions/workflow/status/kalel1500/laravel-tailwind-merge/tests.yml?branch=main&label=tests&style=round-square"></a>
+        <a href="https://packagist.org/packages/kalel1500/laravel-tailwind-merge"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/kalel1500/laravel-tailwind-merge"></a>
+        <a href="https://packagist.org/packages/kalel1500/laravel-tailwind-merge"><img alt="Latest Version" src="https://img.shields.io/packagist/v/kalel1500/laravel-tailwind-merge"></a>
+        <a href="https://packagist.org/packages/kalel1500/laravel-tailwind-merge"><img alt="License" src="https://img.shields.io/github/license/kalel1500/laravel-tailwind-merge"></a>
     </p>
 </p>
 
@@ -14,12 +17,9 @@
 
 A Laravel / PHP port of [tailwind-merge](https://github.com/dcastil/tailwind-merge) by [dcastil](https://github.com/dcastil).
 
-Supports Tailwind v3.0 up to v3.3.
+Supports Tailwind v4.0 up to v4.2
 
-If you find this package helpful, please consider sponsoring the maintainer:
-- Sandro Gehri: **[github.com/sponsors/gehrisandro](https://github.com/sponsors/gehrisandro)**
-
-> If you are **NOT** using Laravel, you can use the [TailwindMerge for PHP](https://github.com/gehrisandro/tailwind-merge-php) directly.
+> If you are **NOT** using Laravel, you can use the [TailwindMerge for PHP](https://github.com/tales-from-a-dev/tailwind-merge-php) directly.
 
 ## Table of Contents
 - [Get Started](#get-started)
@@ -32,12 +32,12 @@ If you find this package helpful, please consider sponsoring the maintainer:
 - [Contributing](#contributing)
 
 ## Get Started
-> **Requires [Laravel 10](https://github.com/laravel/laravel)**
+> **Requires [Laravel 12](https://github.com/laravel/laravel)**
 
 First, install `TailwindMerge for Laravel` via the [Composer](https://getcomposer.org/) package manager:
 
 ```bash
-composer require gehrisandro/tailwind-merge-laravel
+composer require kalel1500/laravel-tailwind-merge
 ```
 
 Optionally, publish the configuration file:
@@ -111,7 +111,7 @@ TailwindMerge::merge(['h-10', 'h-20'], 'h-30', ['h-40']); // h-40
 
 ## Usage
 
-For in depth documentation and general PHP examples, take a look at the [gehrisandro/tailwind-merge-php](https://github.com/gehrisandro/tailwind-merge-php) repository.
+For in depth documentation and general PHP examples, take a look at the [tales-from-a-dev/tailwind-merge-php](https://github.com/tales-from-a-dev/tailwind-merge-php) repository.
 
 ### Use in Laravel Blade Components
 
@@ -214,7 +214,7 @@ twMerge('w-10 h-10 rounded-full bg-red-500 bg-blue-500'); // w-10 h-10 rounded-f
 ```
 
 ### More usage examples
-Take a look at the [TailwindMerge for PHP](https://github.com/gehrisandro/tailwind-merge-php) repository.
+Take a look at the [TailwindMerge for PHP](https://github.com/tales-from-a-dev/tailwind-merge-php) repository.
 
 ## Configuration
 
@@ -260,13 +260,8 @@ return [
 
 For a more detailed explanation of the configuration options, visit the [original package documentation](https://github.com/dcastil/tailwind-merge/blob/v1.14.0/docs/configuration.md).
 
-## Contributing
-
-Thank you for considering contributing to `TailwindMerge for Laravel`! The contribution guide can be found in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
-
-
 ---
 
-`TailwindMerge for PHP` is an open-sourced software licensed under the **[MIT license](https://opensource.org/licenses/MIT)**.
+`Laravel TailwindMerge` is an open-sourced software licensed under the **[MPL-2.0](https://opensource.org/licenses/MPL-2.0)**.
 
 
