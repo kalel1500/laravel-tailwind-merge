@@ -41,7 +41,7 @@ it('uses the prefix from the configuration', function () {
     $app->bind('config', fn () => new Repository([
         'tailwind-merge' => [
             'merge_config' => [
-                'prefix' => 'tw-',
+                'prefix' => 'tw',
             ]
         ],
     ]));

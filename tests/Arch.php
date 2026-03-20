@@ -16,6 +16,7 @@ test('service providers')
         'Illuminate\Support\Facades\Blade',
         'Illuminate\View\Compilers\BladeCompiler',
         'Illuminate\View\ComponentAttributeBag',
+        'Psr\SimpleCache\CacheInterface',
         'TalesFromADev\TailwindMerge\TailwindMergeInterface',
         'TalesFromADev\TailwindMerge\TailwindMerge',
 
@@ -24,4 +25,5 @@ test('service providers')
         'config',
         'config_path',
         'resolve',
+        'storage_path',
     ]);

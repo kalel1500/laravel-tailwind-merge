@@ -5,6 +5,12 @@ declare(strict_types=1);
 use Illuminate\Support\Facades\Event;
 use TalesFromADev\TailwindMerge\TailwindMerge;
 
+beforeEach(function () {
+    config([
+        'tailwind-merge.cache.store' => 'array',
+    ]);
+});
+
 it('uses caching', function () {
     Event::fake();
 
