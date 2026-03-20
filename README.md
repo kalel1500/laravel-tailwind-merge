@@ -262,17 +262,33 @@ TW_MERGE_CACHE_STORE=
 * `enabled`: Enable or disable caching entirely.
 * `store`: The cache store to use. If `null`, the default store is used.
 
-> **Note:**
+> **Note**
 > 
 > By default, this package uses the `file` cache store instead of Laravel's default.
 >
 > This is intentional, as Tailwind Merge generates a high number of small cache entries.
 > Using the `database` driver may lead to performance issues and excessive database queries.
+
+> **How it works internally**
 >
-> You can change this behavior by setting the `store` option to `null` or any other cache store.
+> When using the `file` store, the package automatically maps it to a dedicated cache store named `file_tw_merge`.
+>
+> This store uses a separate directory:
+> ```
+> storage/framework/cache/data/tw-merge
+> ```
+>
+> This ensures:
+> * Tailwind Merge cache entries are isolated from your application's main cache
+> * Your default cache store remains clean and easier to debug
+> * Better performance compared to database-based caching
+>
+> You can still override this behavior by explicitly setting another store or using `null` to fallback to Laravel's default cache store.
+
+### Custom cache store
+
+If you want full control, you can define your own cache store in `config/cache.php` and reference it here.
 
 ---
 
 `Laravel TailwindMerge` is an open-sourced software licensed under the **[MPL-2.0](https://opensource.org/licenses/MPL-2.0)**.
-
-

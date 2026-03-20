@@ -20,10 +20,12 @@ class TailwindMergeServiceProvider extends BaseServiceProvider
 
         $this->app->singleton(TailwindMergeInterface::class, static function (): TailwindMerge {
             $config = config('tailwind-merge');
+            $store = $config['cache']['store'] ?? null;
+            $store = $store === 'file' ? 'file_tw_merge' : $store;
             return new TailwindMerge(
                 additionalConfiguration: $config['merge_config'] ?? [],
                 cache: ($config['cache']['enabled'] ?? true)
-                    ? app('cache')->store($config['cache']['store'] ?? null)
+                    ? app('cache')->store($store)
                     : null,
             );
         });
@@ -42,6 +44,7 @@ class TailwindMergeServiceProvider extends BaseServiceProvider
 
         $this->registerBladeDirectives();
         $this->registerAttributesBagMacros();
+        $this->registerStoreConfig();
     }
 
     protected function registerBladeDirectives(): void
@@ -78,6 +81,17 @@ class TailwindMergeServiceProvider extends BaseServiceProvider
             /** @var ComponentAttributeBag $this */
             return $this->whereDoesntStartWith('class:');
         });
+    }
+
+    protected function registerStoreConfig(): void
+    {
+        config([
+            'cache.stores.file_tw_merge' => array_merge([
+                'driver'    => 'file',
+                'path'      => storage_path('framework/cache/data/tw-merge'),
+                'lock_path' => storage_path('framework/cache/data/tw-merge'),
+            ], config('cache.stores.file_tw_merge', [])),
+        ]);
     }
 
     /**
