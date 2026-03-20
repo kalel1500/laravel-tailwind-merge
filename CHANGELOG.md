@@ -1,6 +1,25 @@
 # Release Notes
 
-## [Unreleased](https://github.com/kalel1500/laravel-tailwind-merge/compare/v0.2.0-beta.1...master)
+## [Unreleased](https://github.com/kalel1500/laravel-tailwind-merge/compare/v0.3.0-beta.1...master)
+
+## [v0.3.0-beta.1](https://github.com/kalel1500/laravel-tailwind-merge/compare/v0.2.0-beta.1...v0.3.0-beta.1) - 2026-03-20
+
+### ⚠️ Breaking Changes
+
+* The package configuration structure has been updated.
+* All Tailwind Merge-related options must now be defined under the `merge_config` key instead of the root configuration.
+
+### Added
+
+* New `cache` configuration section to control caching behavior:
+  * `enabled`: to enable or disable caching.
+  * `store`: specify the Laravel cache store to use (application's default store when `null`).
+
+### Changed
+
+* Separated configuration concerns:
+  * `merge_config` now contains all options passed to the Tailwind Merge engine.
+  * `cache` handles Laravel-specific caching configuration.
 
 ## [v0.2.0-beta.1](https://github.com/kalel1500/laravel-tailwind-merge/compare/v0.1.0-beta.1...v0.2.0-beta.1) - 2026-03-17
 
