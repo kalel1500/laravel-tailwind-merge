@@ -1,6 +1,29 @@
 # Release Notes
 
-## [Unreleased](https://github.com/kalel1500/laravel-tailwind-merge/compare/v0.3.0-beta.1...master)
+## [Unreleased](https://github.com/kalel1500/laravel-tailwind-merge/compare/v0.3.1-beta.1...master)
+
+## [v0.3.1-beta.1](https://github.com/kalel1500/laravel-tailwind-merge/compare/v0.3.0-beta.1...v0.3.1-beta.1) - 2026-03-20
+
+### Added
+
+* Added `phpunit.xml` configuration to ensure all tests are properly discovered and executed.
+* Introduced a dedicated cache store (`file_tw_merge`) for Tailwind Merge operations.
+  <br>This store uses a separate directory inside Laravel's cache path to avoid polluting the default cache store and improve cache isolation.
+
+### Changed
+
+* Tests: 
+  * Updated `tests/Pest.php` to align with Pest v3 structure and improve test discovery.
+  * Reorganized and renamed test files for better consistency and maintainability.
+* When using the `file` cache store, it is now internally mapped to the dedicated `file_tw_merge` store.
+  <br>This ensures better performance and prevents excessive cache entries from mixing with the application's main cache.
+
+### Fixed
+
+* Fixed an issue where some tests were not being executed due to incorrect test discovery configuration.
+* Fixed an issue where the package configuration was not being merged into the Laravel application if the config file was not published.
+  <br>The service provider now correctly calls `mergeConfigFrom`, ensuring that default configuration values are properly loaded and environment variables defined in the config file are respected.
+  <br>This resolves inconsistent behavior when using the package without publishing its configuration.
 
 ## [v0.3.0-beta.1](https://github.com/kalel1500/laravel-tailwind-merge/compare/v0.2.0-beta.1...v0.3.0-beta.1) - 2026-03-20
 
