@@ -22,7 +22,7 @@ return [
 
     'cache' => [
         'enabled' => env('TW_MERGE_CACHE_ENABLED', true),
-        'store' => env('TW_MERGE_CACHE_STORE'),
+        'store' => env('TW_MERGE_CACHE_STORE', 'file'),
     ],
 
     /*

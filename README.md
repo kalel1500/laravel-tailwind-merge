@@ -247,7 +247,7 @@ You can configure caching behavior using the `cache` key:
 return [
     'cache' => [
         'enabled' => env('TW_MERGE_CACHE_ENABLED', true),
-        'store' => env('TW_MERGE_CACHE_STORE'),
+        'store' => env('TW_MERGE_CACHE_STORE', 'file'), // or null to use default store
     ],
 ];
 ```
@@ -260,7 +260,16 @@ TW_MERGE_CACHE_STORE=
 ```
 
 * `enabled`: Enable or disable caching entirely.
-* `store`: The cache store to use. Must match a store defined in `config/cache.php`. If `null`, the default store is used.
+* `store`: The cache store to use. If `null`, the default store is used.
+
+> **Note:**
+> 
+> By default, this package uses the `file` cache store instead of Laravel's default.
+>
+> This is intentional, as Tailwind Merge generates a high number of small cache entries.
+> Using the `database` driver may lead to performance issues and excessive database queries.
+>
+> You can change this behavior by setting the `store` option to `null` or any other cache store.
 
 ---
 
