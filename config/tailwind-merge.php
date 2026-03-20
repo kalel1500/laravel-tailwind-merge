@@ -3,6 +3,28 @@
 declare(strict_types=1);
 
 return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Cache Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Configure caching behavior for merged class results.
+    |
+    | enabled:
+    |   Enable or disable caching entirely.
+    |
+    | store:
+    |   The cache store to use. This must match one of the stores defined
+    |   in config/cache.php. If null, the default cache store is used.
+    |
+    */
+
+    'cache' => [
+        'enabled' => env('TW_MERGE_CACHE_ENABLED', true),
+        'store' => env('TW_MERGE_CACHE_STORE'),
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Merge configuration
