@@ -13,9 +13,11 @@ test('service providers')
     ->toOnlyUse([
         'Illuminate\Contracts\Support\DeferrableProvider',
         'Illuminate\Support\ServiceProvider',
+        'Illuminate\Support\Facades\Blade',
         'Illuminate\View\Compilers\BladeCompiler',
         'Illuminate\View\ComponentAttributeBag',
-        'TailwindMerge',
+        'TalesFromADev\TailwindMerge\TailwindMergeInterface',
+        'TalesFromADev\TailwindMerge\TailwindMerge',
 
         // helpers...
         'app',
