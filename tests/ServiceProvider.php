@@ -40,7 +40,9 @@ it('uses the prefix from the configuration', function () {
 
     $app->bind('config', fn () => new Repository([
         'tailwind-merge' => [
-            'prefix' => 'tw-',
+            'merge_config' => [
+                'prefix' => 'tw-',
+            ]
         ],
     ]));
 
@@ -56,11 +58,13 @@ it('uses the class groups from the configuration', function () {
 
     $app->bind('config', fn () => new Repository([
         'tailwind-merge' => [
-            'classGroups' => [
-                'font-size' => [
-                    ['text' => ['very-large']],
+            'merge_config' => [
+                'classGroups' => [
+                    'font-size' => [
+                        ['text' => ['very-large']],
+                    ],
                 ],
-            ],
+            ]
         ],
     ]));
 
