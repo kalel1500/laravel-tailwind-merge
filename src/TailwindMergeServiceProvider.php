@@ -16,7 +16,7 @@ class TailwindMergeServiceProvider extends BaseServiceProvider
     {
         $this->app->singleton(TailwindMergeInterface::class, static function (): TailwindMerge {
             return new TailwindMerge(
-                additionalConfiguration: config('tailwind-merge', []),
+                additionalConfiguration: config('tailwind-merge.merge_config', []),
                 cache                  : app('cache')->store(),
             );
         });

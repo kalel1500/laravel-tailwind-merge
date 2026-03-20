@@ -5,30 +5,30 @@ declare(strict_types=1);
 return [
     /*
     |--------------------------------------------------------------------------
-    | Prefix
-    |--------------------------------------------------------------------------
-    |
-    | If you are using a tailwind prefix, you can specify it here.
-    */
-
-    'prefix' => env('TAILWIND_MERGE_PREFIX', null),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Class groups
+    | Merge configuration
     |--------------------------------------------------------------------------
     |
     | If TailwindMerge is not able to merge your changes properly you can
-    | modify the merge process by modifying existing class groups or adding
-    | new class groups.
+    | modify the merge process by adding a custom merge configuration.
     |
     | For example, if you want to add a custom font size of 'very-large':
-    | 'classGroups' => [
-    |     'font-size' => [
-    |         ['text' => ['very-large']]
+    | 'merge_config' => [
+    |     'classGroups' => [
+    |         'font-size' => [
+    |             ['text' => ['very-large']]
+    |         ],
     |     ],
     | ],
+    |
+    | These are the available configuration options:
+    | - cacheSize: int,
+    | - prefix: ?string,
+    | - theme: array<string, list<mixed>>,
+    | - classGroups: array<string, list<mixed>>,
+    | - conflictingClassGroups: array<string, list<string>>,
+    | - conflictingClassGroupModifiers: array<string, list<string>>,
+    | - orderSensitiveModifiers: list<string>,
     */
 
-    'classGroups' => [],
+    'merge_config' => [],
 ];
