@@ -50,7 +50,7 @@ it('uses the prefix from the configuration', function () {
 
     $twMerge = $app->get(TailwindMerge::class);
 
-    expect($twMerge->merge('tw-h-4 tw-h-6'))->toBe('tw-h-6');
+    expect($twMerge->merge('tw:h-4 tw:h-6'))->toBe('tw:h-6');
 });
 
 it('uses the class groups from the configuration', function () {
