@@ -49,10 +49,6 @@ php artisan vendor:publish --provider="Thehouseofel\TailwindMerge\TailwindMergeS
 This will create a `config/tailwind-merge.php` configuration file in your project, which you can modify to your needs
 using environment variables. For more information, see the [Configuration](#configuration) section:
 
-```env
-TAILWIND_MERGE_PREFIX=tw-
-```
-
 Finally, you may use `TailwindMerge` in various places like your Blade components:
 
 ```php
@@ -200,11 +196,17 @@ Take a look at the [TailwindMerge for PHP](https://github.com/tales-from-a-dev/t
 
 ## Configuration
 
+This package provides two types of configuration:
+* `merge_config`: Controls how Tailwind classes are merged
+* `cache`: Controls Laravel-specific caching behavior
+
+### Modify merge process
+
 If you are using Tailwind CSS without any extra config, you can use TailwindMerge right away. And stop reading here.
 
 If you're using a custom Tailwind config, you may need to configure TailwindMerge as well to merge classes properly.
 
-By default TailwindMerge is configured in a way that you can still use it if all the following apply to your Tailwind config:
+By default, TailwindMerge is configured in a way that you can still use it if all the following apply to your Tailwind config:
 
 - Only using color names which don't clash with other Tailwind class names
 - Only deviating by number values from number-based Tailwind classes
@@ -213,34 +215,52 @@ By default TailwindMerge is configured in a way that you can still use it if all
 
 If some of these points don't apply to you, you need to customize the configuration.
 
-### Configure Prefix
+All Tailwind Merge-related configuration must now be defined inside the `merge_config` key in your config file.
 
-You can configure the prefix directly in the `config/tailwind-merge.php` configuration file or by setting the environment variable:
+If TailwindMerge is not able to merge your classes properly, you can modify the merge process by customizing existing class groups or adding new ones.
 
-```env
-TAILWIND_MERGE_PREFIX=tw-
-```
-
-### Modify merge process
-
-If TailwindMerge is not able to merge your changes properly you can modify the merge process by modifying existing class groups or adding new class groups.
-
-For example, if you want to add a custom font size of "very-large":
+For example, if you want to add a custom font size of `very-large`:
 
 ```php
 // config/tailwind-merge.php
 
 return [
-  'classGroups' => [
-      'font-size' => [
-          ['text' => ['very-large']]
-      ],
-  ],
+    'merge_config' => [
+        'classGroups' => [
+            'font-size' => [
+                ['text' => ['very-large']],
+            ],
+        ],
+    ],
 ];
 ```
 
+> For a more detailed explanation of the configuration options, visit the [original package documentation](https://github.com/dcastil/tailwind-merge/blob/v1.14.0/docs/configuration.md).
 
-For a more detailed explanation of the configuration options, visit the [original package documentation](https://github.com/dcastil/tailwind-merge/blob/v1.14.0/docs/configuration.md).
+### Cache configuration
+
+You can configure caching behavior using the `cache` key:
+
+```php
+// config/tailwind-merge.php
+
+return [
+    'cache' => [
+        'enabled' => env('TW_MERGE_CACHE_ENABLED', true),
+        'store' => env('TW_MERGE_CACHE_STORE'),
+    ],
+];
+```
+
+Or using environment variables:
+
+```dotenv
+TW_MERGE_CACHE_ENABLED=
+TW_MERGE_CACHE_STORE=
+```
+
+* `enabled`: Enable or disable caching entirely.
+* `store`: The cache store to use. Must match a store defined in `config/cache.php`. If `null`, the default store is used.
 
 ---
 
