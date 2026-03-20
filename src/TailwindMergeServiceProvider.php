@@ -14,6 +14,10 @@ class TailwindMergeServiceProvider extends BaseServiceProvider
 {
     public function register(): void
     {
+        define('TW_MERGE_PATH', realpath(__DIR__ . '/../'));
+
+        $this->mergeConfigFrom(TW_MERGE_PATH . '/config/tailwind-merge.php', 'tailwind-merge');
+
         $this->app->singleton(TailwindMergeInterface::class, static function (): TailwindMerge {
             $config = config('tailwind-merge');
             return new TailwindMerge(
