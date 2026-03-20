@@ -4,7 +4,7 @@
 <p align="center">
     <img src="https://raw.githubusercontent.com/kalel1500/laravel-tailwind-merge/master/art/example.png" width="600" alt="TailwindMerge for Laravel">
     <p align="center">
-        <a href="https://github.com/kalel1500/laravel-tailwind-merge/actions"><img alt="GitHub Workflow Status (main)" src="https://img.shields.io/github/actions/workflow/status/kalel1500/laravel-tailwind-merge/tests.yml?branch=main&label=tests&style=round-square"></a>
+        <a href="https://github.com/kalel1500/laravel-tailwind-merge/actions/workflows/tests.yml"><img alt="GitHub Workflow Status (main)" src="https://github.com/kalel1500/laravel-tailwind-merge/actions/workflows/tests.yml/badge.svg"></a>
         <a href="https://packagist.org/packages/kalel1500/laravel-tailwind-merge"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/kalel1500/laravel-tailwind-merge"></a>
         <a href="https://packagist.org/packages/kalel1500/laravel-tailwind-merge"><img alt="Latest Version" src="https://img.shields.io/packagist/v/kalel1500/laravel-tailwind-merge"></a>
         <a href="https://packagist.org/packages/kalel1500/laravel-tailwind-merge"><img alt="License" src="https://img.shields.io/github/license/kalel1500/laravel-tailwind-merge"></a>
