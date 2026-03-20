@@ -7,6 +7,7 @@ namespace Thehouseofel\TailwindMerge;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use Illuminate\View\ComponentAttributeBag;
+use Psr\SimpleCache\CacheInterface;
 use TalesFromADev\TailwindMerge\TailwindMergeInterface;
 use TalesFromADev\TailwindMerge\TailwindMerge;
 
@@ -20,20 +21,22 @@ class TailwindMergeServiceProvider extends BaseServiceProvider
 
         $this->mergeConfigFrom(TW_MERGE_PATH . '/config/tailwind-merge.php', 'tailwind-merge');
 
-        $this->app->singleton(TailwindMergeInterface::class, static function (): TailwindMerge {
-            $config = config('tailwind-merge');
-            $store = $config['cache']['store'] ?? null;
-            $store = $store === 'file' ? 'file_tw_merge' : $store;
+        $this->app->singleton(TailwindMergeInterface::class, function (): TailwindMerge {
             return new TailwindMerge(
-                additionalConfiguration: $config['merge_config'] ?? [],
-                cache: ($config['cache']['enabled'] ?? true)
-                    ? app('cache')->store($store)
-                    : null,
+                additionalConfiguration: config('tailwind-merge.merge_config', []),
+                cache                  : $this->getCache(),
             );
         });
 
         $this->app->alias(TailwindMergeInterface::class, 'tailwind-merge');
         $this->app->alias(TailwindMergeInterface::class, TailwindMerge::class);
+    }
+
+    protected function getCache(): ?CacheInterface
+    {
+        $store  = config('tailwind-merge.cache.store');
+        $store  = $store === 'file' ? 'file_tw_merge' : $store;
+        return (config('tailwind-merge.cache.enabled')) ? app('cache')->store($store) : null;
     }
 
     public function boot(): void
