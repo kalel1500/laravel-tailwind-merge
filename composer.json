@@ -2,7 +2,7 @@
     "name": "kalel1500/laravel-tailwind-merge",
     "description": "TailwindMerge for Laravel merges multiple Tailwind CSS classes by automatically resolving conflicts between them",
     "keywords": ["laravel", "php", "tailwindcss", "merge", "classes"],
-    "license": "MPL-2.0",
+    "license": "MIT",
     "authors": [
         {
             "name": "Adrian Canals Csefko",
