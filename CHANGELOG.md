@@ -1,6 +1,16 @@
 # Release Notes
 
-## [Unreleased](https://github.com/kalel1500/laravel-tailwind-merge/compare/v0.3.1-beta.1...master)
+## [Unreleased](https://github.com/kalel1500/laravel-tailwind-merge/compare/v0.4.0-beta.0...master)
+
+## [v0.4.0-beta.0](https://github.com/kalel1500/laravel-tailwind-merge/compare/v0.3.1-beta.1...v0.4.0-beta.0) - 2026-08-01
+
+### Added
+
+* Added GitHub Actions workflow (`.github/workflows/tests.yml`) to run Pest tests on pushes and pull requests to `master` (PHP 8.2).
+
+### Changed
+
+* License updated from `MPL-2.0` to `MIT`.
 
 ## [v0.3.1-beta.1](https://github.com/kalel1500/laravel-tailwind-merge/compare/v0.3.0-beta.1...v0.3.1-beta.1) - 2026-03-20
 
